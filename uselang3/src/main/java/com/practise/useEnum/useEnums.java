@@ -9,6 +9,8 @@ public class useEnums {
     public static void main(String[] args) {
 //----------------------------------------------------------------------------------------------
         final ProjectClusterType hdfs = ProjectClusterType.valueOf("HDFS");//1、字符串转枚举
+        ProjectClusterType.HDFS.equals(hdfs.name());
+        System.out.println(ProjectClusterType.HDFS.equals(ProjectClusterType.valueOf("HDFS")));
         System.out.println(hdfs.name());        //2、get名称
         System.out.println(hdfs.getValue());        //3、get value字段
 

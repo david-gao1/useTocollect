@@ -4,7 +4,6 @@ import com.sun.org.slf4j.internal.Logger;
 import com.sun.org.slf4j.internal.LoggerFactory;
 
 public class useEnums {
-    public static final Logger LOG=LoggerFactory.getLogger(useEnums.class);
 
     public static void main(String[] args) {
 //----------------------------------------------------------------------------------------------

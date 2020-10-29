@@ -11,9 +11,10 @@ public class UseCollecion {
         final Set<String> set = new HashSet<String>();
         System.out.println(set); //[]
         System.out.println(set.isEmpty()); //true
-        set.stream().forEach(System.out::println);//流为空时不会执行。
-
         final List<String> arrayListStrings = new ArrayList<>();
         System.out.println(arrayListStrings); //[]
+
+        set.stream().forEach(System.out::println);//流为空时不会执行。
+
     }
 }

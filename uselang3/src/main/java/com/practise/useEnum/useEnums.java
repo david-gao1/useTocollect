@@ -2,12 +2,8 @@ package com.practise.useEnum;
 
 import com.practise.useEnum.moduleTest.Module;
 import com.practise.useEnum.moduleTest.ModuleNameDTO;
-import com.sun.javafx.sg.prism.NGText;
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

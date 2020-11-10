@@ -1,14 +1,14 @@
-package com.practise.useOOP;
+package com.practise.useinterface;
 
-public class Stu {
+public class Employee implements Comparable<Employee> {
     private String name;
     private Integer age;
     private String hobby;
 
-    public Stu() {
+    public Employee() {
     }
 
-    public Stu(String name, Integer age, String hobby) {
+    public Employee(String name, Integer age, String hobby) {
         this.name = name;
         this.age = age;
         this.hobby = hobby;
@@ -48,13 +48,8 @@ public class Stu {
                 '}';
     }
 
-    private void running() {
-        System.out.print("running");
-    }
-
-
-    public void useThis() {
-        running();
-        //System.out.print(this);
+    @Override
+    public int compareTo(Employee o) {
+        return age.compareTo(o.getAge());
     }
 }

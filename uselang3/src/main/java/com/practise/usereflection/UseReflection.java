@@ -80,10 +80,10 @@ public class UseReflection {
         System.out.print(stuClass1.getName());//包的名字也作为类的一部分
         //2、Class.forName
         String stuClassString = "com.practise.useOOP.Stu";
-        Class<?> stuClass2 = Class.forName(stuClassString);//2、获取一个特定的Class实例
+        Class<?> stuClass2 = Class.forName(stuClassString); //2、获取一个特定的Class实例
         //3、class
         Class<Stu> stuClass3 = Stu.class;
-        Stu stu1 = stuClass3.newInstance();//创建类的实例 //默认调用类的无参构造，如果没有无参构造则会抛出异常
+        Stu stu1 = stuClass3.newInstance(); //创建类的实例 //默认调用类的无参构造，如果没有无参构造则会抛出异常
     }
 
     private static void getAInstance() throws ClassNotFoundException, InstantiationException, IllegalAccessException {

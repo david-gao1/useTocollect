@@ -10,7 +10,7 @@ public class Demo01Function {
         final Integer change = change1(s, str -> Integer.valueOf(str));
         //2、转换字符为integer，数字加10.再转为字符
         final String s2 = change2(s
-                , str -> Integer.valueOf(str)
+                , Integer::valueOf
                 , num -> {
                     Integer num1 = num + 10;
                     final String s1 = String.valueOf(num1);
@@ -32,7 +32,7 @@ public class Demo01Function {
     }
 
     /**
-     * 2、使用andThen + apply 进行两次类型转换
+     * 2、使用andThen + apply 进行谓语连接，执行两次类型转换
      *
      * @param s    待转换的字符串
      * @param fun1 String —> Integer  返回function接口实例（带有代码块的，即通过lambda实例化）

@@ -13,8 +13,6 @@ public class Demo02Predicate {
                 , str -> str.length() > 5
                 , str -> str.contains("a"));
         System.out.print(b2);
-
-
     }
 
     /**
@@ -47,10 +45,5 @@ public class Demo02Predicate {
          */
         return pre1.and(pre2).test(s);//等价于return pre1.test(s) && pre2.test(s);
     }
-
-
-
-
-
 
 }

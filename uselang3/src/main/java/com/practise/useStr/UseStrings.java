@@ -20,7 +20,7 @@ public class UseStrings {
                 .map(t -> {
                     t = compile.matcher(t).find() ? "\\" + t : t;
                     return t;
-                })
+                }).skip(1)
                 .collect(Collectors.joining());
         return escName;
     }

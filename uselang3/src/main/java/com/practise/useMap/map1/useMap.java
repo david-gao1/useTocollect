@@ -1,7 +1,5 @@
-package com.practise.useEnum;
+package com.practise.useMap.map1;
 
-import com.practise.useEnum.moduleTest.Module;
-import com.practise.useEnum.moduleTest.ModuleNameDTO;
 import com.sun.org.slf4j.internal.Logger;
 import com.sun.org.slf4j.internal.LoggerFactory;
 

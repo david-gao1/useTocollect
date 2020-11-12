@@ -88,7 +88,7 @@ public class UseStream {
 
     }
 
-    private static List<Transaction> transactions() {
+    public static List<Transaction> transactions() {
         Trader raoul = new Trader("Raoul", "Cambridge");
         Trader mario = new Trader("Mario", "Milan");
         Trader alan = new Trader("Alan", "Cambridge");
@@ -106,7 +106,7 @@ public class UseStream {
 
     /**
      * 使用flatMap
-     * flatMap:接收一个流，然后把所有（所有传递给flatMap中的流，同样对流可以做一些处理）的流连接起来形成一个新的流。
+     * flatMap:接收一个流，然后把所有（所有传递给flatMap中的流，同样对流可以做一些数据转换）的流连接起来形成一个新的流。
      */
     private static void useFlatMap() {
         Integer[] numArray1 = {1, 2, 3, 4, 5};

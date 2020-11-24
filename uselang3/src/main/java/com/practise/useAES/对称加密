@@ -1,0 +1,71 @@
+对称加密
+
+简介： 
+对称加密算法又称传统加密算法。 
+加密和解密使用同一个密钥。
+
+加密解密过程：明文->密钥加密->密文，密文->密钥解密->明文。
+
+示例： 
+密钥：X 
+加密算法：每个字符+X 
+明文：Hello 
+密钥为 1时加密结果：Ifmmp 
+密钥为 2时加密结果：Jgnnq
+
+优缺点： 
+算法公开，计算量小，加密速度快，加密效率高 
+双方使用相同的钥匙，安全性得不到保证
+
+注意事项： 
+密钥的保密工作非常重要 
+密钥要求定期更换
+
+经典加密算法有三种： 
+1. DES(Data Encryption Standard)：数据加密标准(现在用的比较少，因为它的加密强度不够，能够暴力破解) 
+2. 3DES：原理和DES几乎是一样的，只是使用3个密钥，对相同的数据执行三次加密，增强加密强度。(缺点：要维护3个密钥，大大增加了维护成本) 
+3. AES(Advanced Encryption Standard)：高级加密标准，目前美国国家安全局使用的，苹果的钥匙串访问采用的就AES加密。是现在公认的最安全的加密方式，是对称密钥加密中最流行的算法。
+
+```java
+  /**
+     * AES加密字符串
+     *
+     * @param content  需要被加密的字符串
+     * @param password 密钥种子
+     * @return 密文
+     */
+    public static byte[] encrypt(String content, String password) {
+        try {
+            //1、生成AES的key
+            KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");// 创建AES的Key生产者
+            SecureRandom random = SecureRandom.getInstance("SHA1PRNG");
+            random.setSeed(password.getBytes());
+            keyGenerator.init(128, random);// 利用用户密码作为随机数初始化出
+            //加密没关系，SecureRandom是生成安全随机数序列，password.getBytes()是种子，只要种子相同，序列就一样，所以解密只要有password就行
+            SecretKey secretKey = keyGenerator.generateKey();// 根据用户密码，生成一个密钥
+            byte[] enCodeFormat = secretKey.getEncoded();// 返回基本编码格式的密钥，如果此密钥不支持编码，则返回
+            SecretKeySpec key = new SecretKeySpec(enCodeFormat, "AES");// 转换为AES专用密钥
+
+
+            //2、内容加密
+            Cipher cipher = Cipher.getInstance("AES");// 创建密码器
+            cipher.init(Cipher.ENCRYPT_MODE, key);// 初始化为加密模式的密码器
+            byte[] byteContent = content.getBytes("utf-8");
+            byte[] result = cipher.doFinal(byteContent);// 加密
+            return result;
+        } catch (NoSuchPaddingException e) {
+            e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (InvalidKeyException e) {
+            e.printStackTrace();
+        } catch (IllegalBlockSizeException e) {
+            e.printStackTrace();
+        } catch (BadPaddingException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+```

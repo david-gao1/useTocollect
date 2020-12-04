@@ -1,0 +1,130 @@
+##一、变量： 
+
+Scala中的变量分为两种：可变var和不可变val 
+* 可变var：可以随时修改var声明的变量值 
+* 不可变var：val声明的变量不可变，否则会报错：error：reassignment to val。 
+
+声明变量时，可以手动指定类型，也可以自动进行类型推断。 
+
+ 
+##二、数据类型： 
+
+分为两种：基本数据类型和增强版数据类型 
+* 基本数据类型：Byte、Char、Short、Int、Long、Float、Double、Boolean 
+* 增强版数据类型：StringOps、RichInt、RichDouble、RichChar等 
+
+其中增强版数据类为基本数据类型增加了增强的功能。 
+* 例子
+
+RichInt提供一个to函数，1.to(10),此处Int会先隐式转换为RichInt ,然后调用to函数 
+
+```shell script
+scala> 1.to(10) 
+val res4: scala.collection.immutable.Range.Inclusive = Range 1 to 10 
+```
+
+##三、操作符和java中相同 
+
+但是注意的是：scala中没有提供++，--操作符 
+
+即没有var++ ，只能是var+=1； 
+
+ 
+
+##四、If表达式： 
+
+1、scala中的if表达式是有返回值的，java是没有的。 
+
+2、scala中的返回值（else字句）类型可能不同，可以使用**Any**代替，相当于一种公共类型。 
+
+3、当else没有值返回时，默认的值是**Unit**，也可以用()表示，类似于java中的void或null。 
+
+```shell script
+scala> if (age>18) 1 else "ha"; 
+val res7: Any = 1 
+scala> if (age>18) 1 else 2; 
+val res8: Int = 1 
+scala> if (age>18) 1 else (); 
+val res9: AnyVal = 1 
+```
+
+在命令行执行多条语句
+```shell script
+scala> :paste 
+// Entering paste mode (ctrl-D to finish) 
+```
+
+##五、语句终结符： 
+
+Scala默认不需要语句终结符，将每一行作为一个语句。 
+
+如果一行要放多条语句，则前面的语句需要使用";"分号。 
+
+##六、循环： 
+
+###1、for循环：与java的不同： 
+####a、格式的不同 
+```shell script
+scala> :paste 
+// Entering paste mode (ctrl-D to finish) 
+for(i <- 1 to 10) 
+println(i) 
+// Exiting paste mode, now interpreting. 
+1 
+2 
+3 
+...
+```
+* 1 to 10：是闭环 
+* 1 until 10：是开环，不包含10。 
+
+循环体不使用花括号，代码有多行时需要使用花括号。 
+
+
+####b、可以对字符串进行循环。 
+
+```shell script
+scala> for(i <- "hihao") println(i) 
+h 
+i 
+h
+a 
+o 
+```
+###2、while循环 
+```shell script
+scala> :paste 
+// Entering paste mode (ctrl-D to finish) 
+var i=5 
+while(i>0) 
+{ 
+println(i) 
+i-=1 
+} 
+// Exiting paste mode, now interpreting. 
+5 
+4 
+3 
+2 
+1 
+var i: Int = 0 
+```
+
+###3、高级for循环 
+####3.1、if守卫：循环的时候添加判断逻辑 
+```shell script
+scala> for(i<- 1 to 10 if i%2==0) println(i) 
+2 
+4 
+6 
+8 
+10 
+```
+
+####3.2、for推导式 
+使用for时可以使用yield指定一个规则，对循环的数据进行处理，并创建一个集合。 
+
+```shell script
+scala> for(i<- 1 to 10) yield i+1 
+val res3: IndexedSeq[Int] = Vector(2, 3, 4, 5, 6, 7, 8, 9, 10, 11 
+```

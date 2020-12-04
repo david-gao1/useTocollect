@@ -1,0 +1,33 @@
+##一、scala环境安装配置教程 
+
+https://www.imooc.com/wiki/BigData/9001.html 
+
+ 
+
+##二、命令行 
+
+Cmd中输入scala进入命令行：
+* Scala命令行也称为scala解释器（REPL），他会编译scala代码为字节码，然后交给JVM来执行。 
+* REPL：read（取值）；evaluation（求值）；print（打印）；loop（循环） 
+* 在scala命令行内，输入scala代码，解释器就会直接返回结果 
+* 如果没有指定变量来存放计算的值，那么值默认的名称会显示为res开头的变量，而且会显示结果的数据类型。
+
+```shell script
+C:\Users\v_liangggao>scala 
+Welcome to Scala 2.13.4 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_231). 
+Type in expressions for evaluation. Or try :help. 
+scala> 1+1 
+val res0: Int = 2 
+scala> res0*12 
+val res1: Int = 24 
+scala> res 
+res0   res1   res3    
+``` 
+
+
+##三、idea中创建scala工程 
+  1. 在idea中安装scala插件 
+  2. 创建maven工程 
+  3. 模块中添加全局library，添加scala的library 
+
+![模块中添加全局library](GetImage.png)

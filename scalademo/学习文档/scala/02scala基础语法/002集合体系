@@ -1,0 +1,228 @@
+##集合体系
+##简介
+![集合体系](集合体系.png)
+集合的顶层接口是Iterable，Iterable下面还有一些子接口：Set、Seq、Map  
+
+这几个子接口下面的具体的实现类见第三层  
+* Set：hashset、linkedhashset、sortedset  
+* Seq：list、buffer（还有两个常用的arraybuffer、listbuffer）、range  
+* Map：hashmap、sortedmap、linkedHashmap
+
+还有两个数据结构：Tuple、Array
+
+###集合分类
+|序号|分类|具体类|
+|---|---|---|
+|1|可变集合|LinkedHashSet、ListBuffer、ArrayBuffer、LinkedHashMap  |
+|2|不可变集合|List、SortedMap|
+|3|可变、不可变集合|Set、HashSet、SortedSet、Map、HashMap |
+|4|编外人员 |Array：长度不可变、里面的元素可变;Tuple：长度和元素都不可变|
+
+
+
+##集合  
+###1、可变集合和不可变集合
+1、Scala中的集合分为可变和不可变两类集合  
+* 可变集合，集合的元素可以动态修改  
+* 不可变集合，集合的元素在初始化之后就不能修改了。  
+
+2、在不指定具体包名时，默认会使用不可变集合。  
+* scala.collection.mutable包下  
+* scala.collection.immutable包下
+
+##2、Set
+
+####创建
+```shell script
+scala> Set(1,1,2,2,4)  
+val res5: scala.collection.immutable.Set[Int] = Set(1, 2, 4)  
+```
+默认创建的是不可变set  
+可以不使用new
+####添加一个元素
+```shell script
+scala>  res5+5  
+val res6: scala.collection.immutable.Set[Int] = Set(1, 2, 4, 5)  
+```
+会生成新的set 
+####可变set的使用
+```shell script
+scala> scala.collection.mutable.Set(1,1,2)  
+val res7: scala.collection.mutable.Set[Int] = HashSet(1, 2)  
+scala> res7+=3  
+val res8: res7.type = HashSet(1, 2, 3)  
+```
+需要指定包名  
+
+* 注意：前面带object的可以直接创建对象，不使用new关键字。
+![集合体系2](集合体系2.png)
+
+
+###3、List接口
+是seq接口的子接口，不可变列表
+
+* 创建
+```shell script
+scala> List(1,4,2,4)  
+val res20: List[Int] = List(1, 4, 2, 4)  
+```
+* head：获取第一个元素 
+```shell script
+scala> res20.head  
+val res21: Int = 1  
+```
+* tail：除去第一个之后所有的元素  
+```shell script
+scala> res20.tail  
+val res22: List[Int] = List(4, 2, 4)  
+```
+* ::：两个结果合并到一起 
+```shell script
+scala> res21::res22  
+val res23: List[Int] = List(1, 4, 2, 4)  
+scala> res21::res22::res23  
+val res24: List[Any] = List(1, List(4, 2, 4), 1, 4, 2, 4)  
+```
+* 迭代
+```shell script
+for
+```
+
+###4、动态添加元素：ListBuffer
+List是不可变列表，向列表中动态添加元素需要使用ListBuffer,可以实现动态增减元素。
+```shell script
+scala> scala.collection.mutable.ListBuffer(1,2,3,4)  
+val res25: scala.collection.mutable.ListBuffer[Int] = ListBuffer(1, 2, 3, 4)  
+scala> res25+=5  
+val res26: res25.type = ListBuffer(1, 2, 3, 4, 5)  
+scala> res26-=2  
+val res27: res26.type = ListBuffer(1, 3, 4, 5)  
+```
+
+###5、Map：
+* 创建map：
+```shell script
+scala> Map("xiaomi"->12,"huawei"->22,"tencent"->22)  
+val res28: scala.collection.immutable.Map[String,Int] = Map(xiaomi -> 12, huawei -> 22, tencent -> 22)  
+
+scala> Map(("xiaomi",12),("huawei",22),("tencent",22))  
+val res30: scala.collection.immutable.Map[String,Int] = Map(xiaomi -> 12, huawei -> 22, tencent -> 22)  
+```
+* 取值getOrElse
+```shell script
+直接取值时，如果遇到了不存在的key程序会报错，导致程序异常退出。  
+可以使用getOrElse函数，进行先判断（没有则不执行）在执行。  
+``` 
+* 增加 
+```shell script
+scala> res30 + ("oppo"->11)  
+val res33: scala.collection.immutable.Map[String,Int] = Map(xiaomi -> 12, huawei -> 22, tencent -> 22, oppo -> 11)  
+```
+* 移除 
+```shell script
+- key
+```
+* 遍历 
+```shell script
+scala> for ((k,v)<-res33) println("key="+k+":"+"value="+v)  
+key=xiaomi:value=12  
+key=huawei:value=22  
+key=tencent:value=22  
+key=oppo:value=11  
+
+scala> for ( k <- res33.keySet) println("key="+k)  
+key=xiaomi  
+key=huawei  
+key=tencent  
+key=oppo  
+
+scala> for ( v <- res33.values) println("value="+v)  
+value=12  
+value=22  
+value=22  
+value=11  
+```
+
+###6、Map的子类：  
+
+HashMap：  
+SortedMap：  
+LinkedHashMap：可以记住插入的顺序。 
+
+##两个编外人员
+###1、Array  
+####1.1、Array
+scala数组底层实际就是java数组，
+长度不可变，
+数组初始化，长度就固定下来了，而且元素根据其类型进行初始化。   
+
+* 初始化
+```shell script
+scala> new Array[Int](10)  
+val res40: Array[Int] = Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)  
+scala> res40(0)=1  
+scala> res40  
+val res42: Array[Int] = Array(1, 0, 0, 0, 0, 0, 0, 0, 0, 0)  
+``` 
+
+* 直接创建并初始化
+```shell script
+scala> new Array("niaho","haha")  
+                         ^  
+       error: too many arguments (found 2, expected 1) for constructor Array: (_length: Int): Array[T]  
+scala> Array("niaho","haha")  
+val res44: Array[String] = Array(niaho, haha)  
+```  
+注意报错:不使用new直接创建数组。  
+
+####1.2、长度可变数组：ArrayBuffer 
+和java中的ArrayList相似,也支持直接创建并初始化。
+* 创建  
+```shell script
+scala> import scala.collection.mutable.ArrayBuffer  
+import scala.collection.mutable.ArrayBuffer  
+scala> new ArrayBuffer[Int]()  
+val res47: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer()  
+```  
+* 插入
+```shell script
+ scala> res47+=1  
+val res48: res47.type = ArrayBuffer(1)  
+scala> res47+=(1,4,4)  
+            ^  
+       warning: method += in trait Growable is deprecated (since 2.13.0): Use `++=` aka `addAll` instead of varargs `+=`; infix operations with an operand of multiple args will be deprecated  
+val res51: res47.type = ArrayBuffer(1, 2, 1, 1, 4, 4)  
+```
+* 指定位置插入
+```shell script
+ scala> res47.insert(3,12)  
+```
+* 删除
+```shell script
+scala> res47.remove(2)  
+val res58: Int = 1  
+scala> res47  
+val res60: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(1, 2, 4, 4)  
+scala> res47.remove(2,2)  
+scala> res47  
+val res62: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(1, 2  
+```
+####1.3、array数组常见操作：  
+遍历（for或角标）、求和（sum）、最值（max，min）、数组排序（quickSort）  
+```shell script
+scala> scala.util.Sorting.quickSort(a)  
+scala> a  
+res99: Array[Int] = Array(1, 2, 3, 4, 5)  
+```
+
+###2、Tuple  
+元组，与array类似都是不可变的
+元组可以包含不同类型的元素  
+元素角标从1开始、目前元组支持的最大长度是22
+
+```shell script
+scala> (1,"nihao",3.14)  
+val res63: (Int, String, Double) = (1,nihao,3.14)  
+scala> res63._1  
+val res64: Int = 1  
+```  

@@ -1,6 +1,6 @@
 package com.demo
 
-import org.apache.spark.sql.SparkSession
+
 import org.apache.spark.{SparkConf, SparkContext}
 
 /**
@@ -21,18 +21,12 @@ object WordCountScala {
     val linesRDD = sc.textFile("文档/训练资料/wc")
 
     //第三步：对数据进行切割，把一行数据切分成一个一个的单词
-    val wordsRDD = linesRDD.flatMap(_.split(" "))
+    linesRDD.flatMap(_.split(" "))
+      .map((_, 1))
+      .reduceByKey(_+_)
+      .foreach(wordCount=>println(wordCount._1+"--"+wordCount._2))
 
-    //第四步：迭代words,将每个word转化为(word,1)这种形式
-    val pairRDD = wordsRDD.map((_,1))
-
-    //第五步：根据key(其实就是word)进行分组聚合统计
-    val wordCountRDD = pairRDD.reduceByKey(_ + _)
-
-    //第六步：将结果打印到控制台
-    wordCountRDD.foreach(wordCount=>println(wordCount._1+"--"+wordCount._2))
-
-    //第七步：停止SparkContext
+    //第四步：停止SparkContext
     sc.stop()
   }
 

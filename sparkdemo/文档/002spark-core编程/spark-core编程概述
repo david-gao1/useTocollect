@@ -1,0 +1,27 @@
+###
+
+
+运行spark的第一步：初始化spark
+```html
+val conf = new SparkConf().setAppName(appName).setMaster(master)
+new SparkContext(conf)
+```
+
+
+1、创建sparkcontext上下文告诉spark怎样连接一个集群。创建前，需要你设置一些spark参数
+```html
+Initializing Spark
+The first thing a Spark program must do is to create a SparkContext object, which tells Spark how to access a cluster. 
+To create a SparkContext you first need to build a SparkConf object that contains information about your application.
+Only one SparkContext should be active per JVM. You must stop() the active SparkContext before creating a new one.
+```
+2、sparkconf参数说明
+
+* AppName
+* Master
+```html
+The appName parameter is a name for your application to show on the cluster UI. 
+master is a Spark, Mesos or YARN cluster URL, or a special “local” string to run in local mode. 
+In practice, when running on a cluster, you will not want to hardcode master in the program, but rather launch the application with spark-submit and receive it there. 
+However, for local testing and unit tests, you can pass “local” to run Spark in-process.
+```

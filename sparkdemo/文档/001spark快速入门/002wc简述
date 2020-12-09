@@ -32,6 +32,8 @@ object WordCountScala {
 
 }
 ```
+
+##wc的编程套路
 * 创建spark上下文
 * 加载数据
 * 对数据的处理（数据处理和输出）

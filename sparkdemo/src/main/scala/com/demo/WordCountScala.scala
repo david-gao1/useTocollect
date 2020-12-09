@@ -20,11 +20,11 @@ object WordCountScala {
     //第二步：加载数据
     val linesRDD = sc.textFile("文档/训练资料/wc")
 
-    //第三步：对数据进行切割，把一行数据切分成一个一个的单词
-    linesRDD.flatMap(_.split(" "))
-      .map((_, 1))
-      .reduceByKey(_+_)
-      .foreach(wordCount=>println(wordCount._1+"--"+wordCount._2))
+    //第三步：对数据进行处理
+    linesRDD.flatMap(_.split(" ")) //截取数据为新的流
+      .map((_, 1)) //修改数据格式
+      .reduceByKey(_+_) //将key相同的元素进行聚合
+      .foreach(wordCount=>println(wordCount._1+"--"+wordCount._2)) //触发执行：打印处理后的数据
 
     //第四步：停止SparkContext
     sc.stop()

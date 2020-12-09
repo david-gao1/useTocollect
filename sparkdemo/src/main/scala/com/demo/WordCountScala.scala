@@ -18,7 +18,7 @@ object WordCountScala {
 
 
     //第二步：加载数据
-    val linesRDD = sc.textFile("C:\\Users\\v_liangggao\\Desktop\\wc11.txt")
+    val linesRDD = sc.textFile("文档/训练资料/wc")
 
     //第三步：对数据进行切割，把一行数据切分成一个一个的单词
     val wordsRDD = linesRDD.flatMap(_.split(" "))

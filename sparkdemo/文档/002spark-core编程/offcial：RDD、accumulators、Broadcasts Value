@@ -1,3 +1,11 @@
+官网阅读建议：
+
+
+不需要进行通读，关键还是需要知道文档讲的是什么。-->别太慢导致了读了后面的忘记前面的。
+了解总体：知道原理。
+实践才是要细雕琢的。
+从官网中获取权威的知识。
+
 #Overview
 ```html
 At a high level, every Spark application consists of a driver program that runs the user’s main function and executes various parallel operations on a cluster. The main abstraction Spark provides is a resilient distributed dataset (RDD),  RDDs are created by starting with a file in the Hadoop file system (or any other Hadoop-supported file system), or an existing Scala collection in the driver program, and transforming it. Users may also ask Spark to persist an RDD in memory, allowing it to be reused efficiently across parallel operations. Finally, RDDs automatically recover from node failures.

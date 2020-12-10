@@ -1,6 +1,3 @@
-###
-
-
 运行spark的第一步：初始化spark
 ```html
 val conf = new SparkConf().setAppName(appName).setMaster(master)

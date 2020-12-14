@@ -1,0 +1,28 @@
+### 查询起点sparkSession
+sparksession的作用：
+1、读取文件
+2、创建临时视图
+3、引入隐士转换（当涉及到rdd转换为DF时需要引入）
+
+### 是用sparksession查询数据的两种方式
+1、使用df
+2、使用临时视图
+
+
+### 创建df有三种方式：
+1、从json文件中直接创建
+2、从已有的rdd
+3、从文件中构建数据格式（样例类或主动定义格式）
+4、hive中
+
+### rdd，DF和DS之间的相互转换
+rdd->DF:方法toDf、直接读取json文件、使用样例类
+rdd->DS:使用样例类、使用seq
+DF->DS:as+样例类。
+DS->DF:toDf()
+DS/DF->rdd:方法rdd
+
+
+### 内置的聚合函数和UDF函数
+1、内置的聚合函数（见官网）
+2、UDF函数

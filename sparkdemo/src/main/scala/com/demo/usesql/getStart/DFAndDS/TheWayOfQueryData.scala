@@ -1,15 +1,16 @@
-package scala.com.demo.usesql.getStart
+package scala.com.demo.usesql.getStart.DFAndDS
 
-import org.apache.spark.SparkConf
 import org.apache.spark.sql.{DataFrame, SparkSession}
+
+import scala.com.demo.usesql.getStart.HelloSparkSql
 
 /**
  * sql编程的两种方式
- * 1、按照dataframe的方式
- * 2、
+ * 1、按照非类型化的数据操作的方式
+ * 2、创建临时视图
  *
  */
-object DateFrameAction {
+object TheWayOfQueryData {
   def main(args: Array[String]): Unit = {
     val stuSsAndDF: (SparkSession, DataFrame) = HelloSparkSql.getDFFromJsonFile
     // This import is needed to use the $-notation

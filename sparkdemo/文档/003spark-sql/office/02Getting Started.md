@@ -259,7 +259,7 @@ Find full example code at "examples/src/main/scala/org/apache/spark/examples/sql
 
 ##Interoperating with RDDs
 ```html
-RDD抽样
+和RDD进行交互
 Spark sql支持两种不同的方式将rdd转换为Datasets
 1、通过反射来推断rdd（包含特定格式的object）的格式
 2、通过编程接口创建一个格式，然后应用于RDD。

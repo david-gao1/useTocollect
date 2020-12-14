@@ -1,0 +1,11 @@
+
+```html
+spark sql用于处理结构化数据
+此向导提供了包含语法、语义、关键字、和一些常见的实例
+```
+```html
+Spark SQL is Apache Spark’s module for working with structured data. 
+This guide is a reference for Structured Query Language (SQL) and includes syntax, 
+semantics, keywords, and examples for common SQL usage. 
+It contains information for the following topics:
+```

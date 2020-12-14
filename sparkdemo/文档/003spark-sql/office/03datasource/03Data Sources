@@ -1,0 +1,19 @@
+data source
+
+```html
+spark sql 通过使用dataframe可以操作许多数据来源
+通过使用关系转换和临时视图来操作dataframe，创建临时视图可以使用查询语句查询数据。
+这部分将介绍使用数据源加载和保存数据的一般方法。
+```
+
+```html
+Spark SQL supports operating on a variety of data sources through the DataFrame interface. 
+A DataFrame can be operated on using relational transformations 
+and can also be used to create a temporary view. 
+Registering a DataFrame as a temporary view allows you to run SQL queries over its data. 
+This section describes the general methods for loading and saving data 
+using the Spark Data Sources and then goes into specific options 
+that are available for the built-in data sources.
+```
+
+

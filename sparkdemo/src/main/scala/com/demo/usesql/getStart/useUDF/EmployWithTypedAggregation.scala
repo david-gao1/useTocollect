@@ -12,7 +12,7 @@ case class Average(var sum: Long, var count: Long)
  * buf:Average:有两个值（sum、count）
  * out:
  */
-object MyAverage extends Aggregator[Employee, Average, Double] {
+object EmployWithTypedAggregation extends Aggregator[Employee, Average, Double] {
 
   override def zero: Average = Average(0, 0)
 

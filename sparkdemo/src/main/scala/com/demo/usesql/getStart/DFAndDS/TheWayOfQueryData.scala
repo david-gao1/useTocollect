@@ -1,8 +1,7 @@
 package scala.com.demo.usesql.getStart.DFAndDS
 
+import com.demo.usesql.getStart.StartingPoint.HelloSparkSql
 import org.apache.spark.sql.{DataFrame, SparkSession}
-
-import scala.com.demo.usesql.getStart.HelloSparkSql
 
 /**
  * sql编程的两种方式

@@ -1,0 +1,39 @@
+##Starting Point: SparkSession
+
+```html
+spark所有功能的入口点是SparkSession
+使用SparkSession.builder() 创建一个基础的SparkSession
+```
+
+```html
+The entry point into all functionality in Spark is the SparkSession class. 
+To create a basic SparkSession, just use SparkSession.builder():
+```
+```shell script
+import org.apache.spark.sql.SparkSession
+
+val spark = SparkSession
+  .builder()
+  .appName("Spark SQL basic example")
+  .config("spark.some.config.option", "some-value")
+  .getOrCreate()
+
+// For implicit conversions like converting RDDs to DataFrames
+// 当rdd转为df的时候需要使用隐式转换
+import spark.implicits._
+```
+```html
+Spark 2.0中的SparkSession提供了对Hive特性的内置支持，
+包括使用HiveQL编写查询的能力、对Hive udf的访问以及从Hive表读取数据的能力。
+要使用这些特性，您不需要现有的Hive设置。
+```
+
+```html
+Find full example code at 
+"examples/src/main/scala/org/apache/spark/examples/sql/SparkSQLExample.scala" in the Spark repo.
+SparkSession in Spark 2.0 provides builtin support for Hive features 
+including the ability to write queries using HiveQL, access to Hive UDFs, 
+and the ability to read data from Hive tables. 
+To use these features, you do not need to have an existing Hive setup.
+```
+

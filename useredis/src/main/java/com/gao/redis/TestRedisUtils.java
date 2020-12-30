@@ -1,0 +1,18 @@
+package com.gao.redis;
+
+
+import redis.clients.jedis.Jedis;
+
+/**
+ * Created by xuwei
+ */
+public class TestRedisUtils {
+    public static void main(String[] args) {
+        //获取连接
+        Jedis jedis = RedisUtils.getJedis();
+        String value = jedis.get("imooc");
+        System.out.println(value);
+        //向连接池返回连接
+        RedisUtils.returnResource(jedis);
+    }
+}

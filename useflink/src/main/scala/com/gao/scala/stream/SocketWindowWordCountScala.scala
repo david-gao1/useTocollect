@@ -1,5 +1,4 @@
-package com.gao.scala
-
+package com.gao.scala.stream
 
 import org.apache.flink.streaming.api.scala.{DataStream, StreamExecutionEnvironment}
 import org.apache.flink.streaming.api.windowing.time.Time

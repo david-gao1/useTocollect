@@ -1,5 +1,4 @@
-package com.gao.scala
-
+package com.gao.scala.batch
 
 import org.apache.flink.api.scala.{DataSet, ExecutionEnvironment}
 

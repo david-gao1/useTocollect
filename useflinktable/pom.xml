@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.gao</groupId>
+    <artifactId>useflinktable</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+        <!--跟执行sql有关??-->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-clients_2.12</artifactId>
+            <version>1.11.1</version>
+            <!--<scope>provided</scope>-->
+        </dependency>
+        <!-- table API & SQL -->
+
+        <!-- 使用table API和sql-->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-table-api-scala-bridge_2.12</artifactId>
+            <version>1.11.0</version>
+            <!--<scope>provided</scope>-->
+        </dependency>
+        <!--本地运行需要添加依赖-->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-table-planner-blink_2.12</artifactId>
+            <version>1.11.0</version>
+            <!--<scope>provided</scope>-->
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-streaming-scala_2.12</artifactId>
+            <version>1.11.0</version>
+            <!--<scope>provided</scope>-->
+        </dependency>
+
+        <!-- 老的执行引擎-->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-table-planner_2.12</artifactId>
+            <version>1.11.1</version>
+<!--            <scope>provided</scope>-->
+        </dependency>
+
+
+    </dependencies>
+
+
+</project>

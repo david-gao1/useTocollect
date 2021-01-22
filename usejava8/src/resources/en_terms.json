@@ -1,0 +1,142 @@
+[
+    {
+        "cnName": "HDFS到HBase",
+        "enName": "HdfsToHbase"
+    },
+    {
+        "cnName": "shell",
+        "enName": "shell"
+    },
+    {
+        "cnName": "spark",
+        "enName": "spark"
+    },
+    {
+        "cnName": "data_quality",
+        "enName": "dataQuality"
+    },
+    {
+        "cnName": "THIVE到MYSQL",
+        "enName": "thive2mysql"
+    },
+    {
+        "cnName": "THIVE到PG",
+        "enName": "thive2pg"
+    },
+    {
+        "cnName": "HDFS到PG",
+        "enName": "HDFSToPg"
+    },
+    {
+        "cnName": "HDFS到Oracle",
+        "enName": "HDFSToOracle"
+    },
+    {
+        "cnName": "HDFS到MYSQL",
+        "enName": "HDFSToMysql"
+    },
+    {
+        "cnName": "FTP到HDFS",
+        "enName": "FTPToHDFS"
+    },
+    {
+        "cnName": "Hive SQL",
+        "enName": "Hive SQL"
+    },
+    {
+        "cnName": "HIVE到HDFS",
+        "enName": "HiveToHdfs"
+    },
+    {
+        "cnName": "HDFS到HIVE",
+        "enName": "HdfsToHive"
+    },
+    {
+        "cnName": "PythonSQL脚本",
+        "enName": "tdw_pysql"
+    },
+    {
+        "cnName": "SparkScala计算",
+        "enName": "ovsea_scala_128"
+    },
+    {
+        "cnName": "虫洞任务",
+        "enName": "ovsea_warmhole_130"
+    },
+    {
+        "cnName": "校验对账文件1",
+        "enName": "tdbank_check_84"
+    },
+    {
+        "cnName": "HDFS到THIVE1",
+        "enName": "ovsea_hdfs2tdw_75"
+    },
+    {
+        "cnName": "THIVE到HDFS",
+        "enName": "tdw2hdfs_86"
+    },
+    {
+        "cnName": "HDFS到THIVE",
+        "enName": "hdfs2tdw"
+    },
+    {
+        "cnName": "校验对账文件",
+        "enName": "tdbank-check"
+    },
+    {
+        "cnName": "flink任务",
+        "enName": "flink"
+    },
+    {
+        "cnName": "MapReduce",
+        "enName": "MapReduce"
+    },
+    {
+        "cnName": "custom topology",
+        "enName": "custom topology"
+    },
+    {
+        "cnName": "kafkatoHDFS",
+        "enName": "kafkatoHDFS"
+    },
+    {
+        "cnName": "kafkatoHbase",
+        "enName": "kafkatoHbase"
+    },
+    {
+        "cnName": "Mysql到Hive",
+        "enName": "MysqlToHive"
+    },
+    {
+        "cnName": "HIVE到MYSQL",
+        "enName": "HiveToMysql"
+    },
+    {
+        "cnName": "SQL SERVER到HIVE",
+        "enName": "SqlServerToHive"
+    },
+    {
+        "cnName": "HIVE到SQL SERVER",
+        "enName": "HiveToSqlServer"
+    },
+    {
+        "cnName": "ORACLE到HIVE",
+        "enName": "OracleToHive"
+    },
+    {
+        "cnName": "HIVE到ORACLE",
+        "enName": "HiveToOracle"
+    },
+    {
+        "cnName": "Mysql到HDFS",
+        "enName": "MysqltoHDFS"
+    },
+    {
+        "cnName": "PG到HDFS",
+        "enName": "PGtoHDFS"
+    },
+    {
+        "cnName": "ORACLE到HDFS",
+        "enName": "ORACLEtoHDFS"
+    }
+]

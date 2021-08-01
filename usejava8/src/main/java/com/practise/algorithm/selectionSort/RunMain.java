@@ -9,7 +9,7 @@ import java.util.Arrays;
  */
 public class RunMain {
     public static void main(String[] args) {
-        int[] arr = {888, 111, 2, 444, 6, 888, 999};
+        Integer[] arr = {888, 111, 2, 444, 6, 888, 999};
         SelectionSort.sort(arr);
         System.out.print(Arrays.toString(arr));
 

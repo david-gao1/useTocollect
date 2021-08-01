@@ -1,5 +1,7 @@
 package com.practise.algorithm.selectionSort;
 
+import com.practise.algorithm.LinearSearch.Student;
+
 import java.util.Arrays;
 
 /**
@@ -12,6 +14,13 @@ public class RunMain {
         Integer[] arr = {888, 111, 2, 444, 6, 888, 999};
         SelectionSort.sort(arr);
         System.out.print(Arrays.toString(arr));
+
+
+        Student[] students = {new Student("Alice", 98),
+                new Student("Bobo", 100),
+                new Student("Charles", 66)};
+        SelectionSort.sort(students);
+        System.out.println(Arrays.toString(students));
 
     }
 }

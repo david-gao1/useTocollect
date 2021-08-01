@@ -1,12 +1,19 @@
 package com.practise.algorithm.LinearSearch;
 
-public class Student {
+public class Student implements Comparable<Student> {
 
     private String name;
+    private Integer score;
 
     public Student(String name) {
         this.name = name;
     }
+
+    public Student(String name, Integer score) {
+        this.name = name;
+        this.score = score;
+    }
+
 
     /**
      * 实现的是Object的equals
@@ -26,5 +33,18 @@ public class Student {
         }
         Student another = (Student) student;
         return this.name.equals(another.name);
+    }
+
+    @Override
+    public int compareTo(Student other) {
+        return this.score - other.score;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", score=" + score +
+                '}';
     }
 }

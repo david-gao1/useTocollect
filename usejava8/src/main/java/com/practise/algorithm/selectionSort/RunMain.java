@@ -1,5 +1,6 @@
 package com.practise.algorithm.selectionSort;
 
+import com.practise.algorithm.LinearSearch.ArrayGenerator;
 import com.practise.algorithm.LinearSearch.Student;
 
 import java.util.Arrays;
@@ -22,5 +23,10 @@ public class RunMain {
         SelectionSort.sort(students);
         System.out.println(Arrays.toString(students));
 
+        int[] scales = {10000, 100000};
+        for (int scale : scales) {
+            Integer[] randNums = ArrayGenerator.generateRandomArray(scale, scale);
+            SortingHelper.testSelectionSort("SelectionSort", randNums);
+        }
     }
 }

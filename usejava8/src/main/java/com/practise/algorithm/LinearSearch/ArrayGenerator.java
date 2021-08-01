@@ -24,7 +24,13 @@ public class ArrayGenerator {
         return arr;
     }
 
-    // 生成一个长度为 n 的随机数组，每个数字的范围是 [0, bound)
+    /**
+     * 生成一个长度为 n 的随机数组，每个数字的范围是 [0, bound)
+     *
+     * @param n
+     * @param bound
+     * @return
+     */
     public static Integer[] generateRandomArray(int n, int bound) {
 
         Integer[] arr = new Integer[n];

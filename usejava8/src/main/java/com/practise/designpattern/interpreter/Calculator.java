@@ -43,12 +43,7 @@ public class Calculator {
         this.expression = stack.pop();
     }
 
-    /**
-     * 调用解释器逻辑
-     *
-     * @param var 输入值 {变量名1,值1;变量名2,值2}
-     * @return
-     */
+    //调用解释器逻辑
     public int run(HashMap<String, Integer> var) {
         return this.expression.interpreter(var);
     }

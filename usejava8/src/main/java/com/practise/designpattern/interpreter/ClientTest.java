@@ -32,7 +32,6 @@ public class ClientTest {
 				}
 			}
 		}
-
 		return map;
 	}
 }

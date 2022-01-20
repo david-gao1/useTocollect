@@ -1,4 +1,4 @@
-package com.practise.JUC;
+package com.practise.JUC.basic;
 
 /**
  * 需要注意的是，当前线程调用共享变量的 wait()方法后只会释放当前共享变量上的锁，

@@ -1,4 +1,4 @@
-package com.practise.JUC;
+package com.practise.JUC.basic;
 
 import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 

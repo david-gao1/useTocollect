@@ -1,4 +1,4 @@
-package com.practise.JUC;
+package com.practise.JUC.basic;
 
 /**
  * @Description TODO
